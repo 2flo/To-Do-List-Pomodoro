@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import ToDoList from './views/ToDoList.vue'
+import pomodoro from './views/pomodoro.vue'
 
 Vue.use(Router)
 
@@ -20,6 +22,16 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/todolist',
+      name: 'todolist',
+      component: ToDoList
+    },
+    {
+      path: '/pomodoro',
+      name: 'pomodoro',
+      component: pomodoro
     }
   ]
 })
