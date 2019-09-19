@@ -16,7 +16,7 @@ export default {
     },
     methods: {
         addList: function(){
-            this.List.push({task: this.newList})
+            this.List.push({List: this.newTask})
         }
     }
 }
