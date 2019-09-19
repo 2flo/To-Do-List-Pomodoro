@@ -2,6 +2,8 @@
   <div class="timer">
     <h1>Pomodoro</h1>
     <button @click="timer">Lancer le décompte</button>
+    <button @click="pause">>||</button>
+    <button @click="retour">Revenir à 25</button>
     {{count}}
   </div>
 </template>
@@ -23,6 +25,15 @@ export default {
             this.count--;
             if (this.count === 0){
                 clearInterval(this.val);
+                alert("Bonne année!");
+            }
+        },
+        pause: function(){
+            clearInterval(this.val);
+        },
+        retour: function(){
+            if (this.count === this.pause){
+                return this.count;
             }
         }
     }

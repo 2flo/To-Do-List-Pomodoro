@@ -2,8 +2,8 @@
 <div class="todo">
     <h1>To-Do Liste</h1>
     <input type="search" placeholder="Ajouter un rappel">
-    <button>Ok</button>
-    <List></List>
+    <button @click="addList">Ok</button>
+    <List title="Go to fuck you!"></List>
 </div>
 </template>
 
@@ -12,7 +12,12 @@ import List from '../components/List.vue'
 export default {
     name: "todolist",
     components:{
-        List
+        List,
+    },
+    methods: {
+        addList: function(){
+            this.List.push({task: this.newList})
+        }
     }
 }
 </script>
